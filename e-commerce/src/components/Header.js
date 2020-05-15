@@ -1,21 +1,58 @@
-import React from 'react';
+import React, { Component } from 'react';
 import '../css/Header.css';
 import carrinho from '../img/carrinho.svg';
 
-function Marca() {
-  return (
-    <div className="container">
-      <img src ={carrinho} className = 'logo' alt="logo carrinho"></img>
-      <h1 className = 'title'>E-commerce daOra</h1>
-      <form>
-        <label> User: </label>
-        <input type = "text"></input>
-        <label> Password: </label>
-        <input type = "text"></input>
-        <button type ="submit">Login</button>
-        </form>     
+
+class Botao extends Component {
+  render() {
+    return (
+      <button type="submit">Login</button>
+    )
+  }
+}
+
+class CamposFormulario extends Component {
+  render(){
+    return (  
+      <form className = "formulario">
+      <label> User: </label>
+      <input type="text"></input>
+      <label> Password: </label>
+      <input type="text"></input>
+      </form>
+    )
+  }
+}
+
+const LoginForm = () => {
+  return ( 
+    <div >
+      <CamposFormulario/>
+      <Botao/>
+      </div>
+  );
+}
+
+const Marca = () => {
+  return(
+    <div>
+    <img src= {carrinho} alt=""/>
+    <h1>E-commerce DaOra</h1>
     </div>
   );
 }
 
-export default Marca;
+class Header extends Component {
+
+  render (){
+
+    return(
+      <div class = "wrapper">
+      <Marca/>
+      <LoginForm/>
+      </div>
+    );
+  }
+}
+
+export default Header ;
